@@ -1,0 +1,6 @@
+include LICENSE
+include README.rst
+include requirements.txt
+recursive-include toolbox/migrations *
+recursive-include toolbox/templates *
+recursive-include toolbox/docs *

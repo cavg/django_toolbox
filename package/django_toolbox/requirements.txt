@@ -1,0 +1,3 @@
+xlwt==1.2.0
+pytz==2017.2
+errbit-reporter==0.0.3
