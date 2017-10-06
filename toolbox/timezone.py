@@ -29,7 +29,7 @@ def to_utc(datetime):
     return datetime.astimezone(tz.gettz('UTC'))
 
 
-def to_datetime(s_datetime, in_utc = True):
+def to_datetime(s_datetime, in_utc = True, format="%Y-%m-%d %H:%M:%S"):
     """ String to datetime in UTC by default
 
     Args:
@@ -39,7 +39,7 @@ def to_datetime(s_datetime, in_utc = True):
         datetime (datetime.datetime): converted
 
     """
-    dt = datetime.strptime("{}".format(s_datetime),"%Y-%m-%d %H:%M:%S")
+    dt = datetime.strptime("{}".format(s_datetime),format)
     if in_utc:
         return to_utc(dt)
     else:
