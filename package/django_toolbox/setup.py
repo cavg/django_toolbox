@@ -13,7 +13,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='django_toolbox',
-    version='0.0.4',
+    version='0.2.0',
     packages=find_packages(),
     include_package_data=True,
     license='BSD License',

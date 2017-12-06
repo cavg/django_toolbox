@@ -13,3 +13,11 @@
 
 
 4. Fake smtp server
+
+
+5. Generate PDF from URL
+    Sys dep: brew install python3 cairo pango gdk-pixbuf libffi
+    env vars:
+        export LC_ALL=en_US.UTF-8
+        export LANG=en_US.UTF-8
+    requirements: WeasyPrint==0.41

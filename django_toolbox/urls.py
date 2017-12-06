@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from toolbox.views import pdf_generator
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
+    url(r'^pdf-generator/$', pdf_generator, name='pdf-generator')
 ]

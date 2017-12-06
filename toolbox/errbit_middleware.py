@@ -8,26 +8,29 @@ class ErrbitExceptionHandler(object):
         self.get_response = get_response
 
     def __call__(self, request):
-        return self.get_response(request)
+        response = self.get_response(request)
+        return response
 
     def process_exception(self, request, exception):
-
         config = errbit.Configuration(
             api_key=settings.ERRBIT_API_KEY,
             errbit_url=settings.ERRBIT_URL,
             environment_name=settings.ERRBIT_ENVIRONMENT
         )
-
         client = errbit.Client(config)
 
-        _type, _value, _traceback = sys.exc_info()
-        backtrace = traceback.extract_tb(_traceback)
+        params = None
+        if request.method == 'GET':
+            params = dict(request.GET)
+        else:
+            params = dict(request.POST)
 
-        notice = errbit.Notice(config, _type.__name__, str(_value), backtrace)
 
-        client.send_notice(notice)
+        client.notify(exc_info=None, request_url=request.get_raw_uri(), component=None,
+               action=str(request.method), params=params, session=request.session, cgi_data={}, timeout=None)
 
         return None
+
 
 
 
