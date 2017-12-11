@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 
 from weasyprint import HTML
 
@@ -27,9 +28,15 @@ def upload_s3(bucket_name, bucket_sub_dir, output_dir, filename, content_type):
         else:
             return False
 
+@csrf_exempt
 def pdf_generator(request):
     url = request.GET.get('url', None)
+    if url is None:
+        url = request.POST.get('url', None)
+
     file_name = request.GET.get('file_name', None)
+    if file_name is None:
+        file_name = request.POST.get('file_name', None)
 
     output_dir = "/tmp"
     bucket_name = 'leantech-cl'
