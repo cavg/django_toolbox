@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from weasyprint import HTML
 
-import boto3, os, logging
+import boto3, os, logging, json
 
 
 logger = logging.getLogger(__name__)
@@ -30,13 +30,10 @@ def upload_s3(bucket_name, bucket_sub_dir, output_dir, filename, content_type):
 
 @csrf_exempt
 def pdf_generator(request):
-    url = request.GET.get('url', None)
-    if url is None:
-        url = request.POST.get('url', None)
+    data = json.loads(request.body.decode("utf-8"))
 
-    file_name = request.GET.get('file_name', None)
-    if file_name is None:
-        file_name = request.POST.get('file_name', None)
+    url = data['url']
+    file_name = data['file_name']
 
     output_dir = "/tmp"
     bucket_name = 'leantech-cl'

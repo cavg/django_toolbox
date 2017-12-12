@@ -26,3 +26,10 @@ Quick start
    to create a poll (you'll need the Admin app enabled).
 
 5. Visit http://127.0.0.1:8000/toolbox/.
+
+
+Changelog
+---------
+
+0.3.0
+    Custom Auth Backend support login with email or username

@@ -5,5 +5,5 @@ cd package/django_toolbox/ &&
 python3 setup.py sdist &&
 
 #Install new version
-pip3 install --user dist/django_toolbox-0.2.2.tar.gz &&
+pip3 install --user dist/django_toolbox-0.3.0.tar.gz &&
 cd ../../

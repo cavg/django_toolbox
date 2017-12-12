@@ -121,3 +121,6 @@ STATIC_URL = '/static/'
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID', None)
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY', None)
+
+
+AUTHENTICATION_BACKENDS = ['toolbox.custom_auth_backend.EmailOrUsernameModelBackend']
