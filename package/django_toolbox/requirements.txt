@@ -2,3 +2,8 @@ xlwt==1.2.0
 pytz==2017.2
 errbit-reporter==0.0.3
 WeasyPrint==0.41
+django==1.11.2
+python-dateutil==2.6.1
+coverage==4.4.1
+htmlparser==0.0.2
+boto3==1.4.7

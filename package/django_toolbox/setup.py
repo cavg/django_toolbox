@@ -1,7 +1,7 @@
 import os
 from setuptools import find_packages, setup
 
-with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
+with open(os.path.join(os.path.dirname(__file__), 'readme.md')) as readme:
     README = readme.read()
 
 # allow setup.py to be run from any path
@@ -13,7 +13,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='django_toolbox',
-    version='0.3.0',
+    version='0.3.1',
     packages=find_packages(),
     include_package_data=True,
     license='BSD License',

@@ -1,0 +1,22 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+django = "==1.11.2"
+xlwt = "==1.2.0"
+pytz = "==2017.2"
+errbit-reporter = "==0.0.3"
+weasyprint = "==0.41"
+python-dateutil = "==2.6.1"
+coverage = "==4.4.1"
+htmlparser = "==0.0.2"
+"boto3" = "==1.4.7"
+
+
+[dev-packages]
+
